@@ -76,17 +76,13 @@ const categories = [
 ];
 
 const allQuestions: Question[] = [
-  // Catégorie : Énergie
+  // Catégorie : Énergie (30 questions)
   {
     id: 1,
     type: 'qcm',
     category: "Énergie",
     question: "Quelle est la principale source d'énergie renouvelable en France ?",
-    options: [
-      "L'énergie hydraulique",
-      "L'énergie solaire",
-      "L'énergie éolienne"
-    ],
+    options: ["L'énergie hydraulique", "L'énergie solaire", "L'énergie éolienne"],
     correctAnswer: 0,
     explanation: "L'énergie hydraulique est la principale source d'énergie renouvelable en France, grâce à ses nombreux barrages.",
     ecoFact: "Un téléphone contient jusqu'à 30 métaux rares.",
@@ -152,7 +148,62 @@ const allQuestions: Question[] = [
     ecoFact: "En une heure, le soleil fournit à la Terre plus d'énergie que l'humanité n'en consomme en une année !",
     co2Emission: 0.1
   },
-  // Catégorie : Eau
+  {
+    id: 26,
+    type: 'qcm',
+    category: "Énergie",
+    question: "Quelle est la durée de vie moyenne d'une éolienne ?",
+    options: ["20-25 ans", "10-15 ans", "30-35 ans"],
+    correctAnswer: 0,
+    explanation: "Une éolienne a une durée de vie moyenne de 20 à 25 ans.",
+    ecoFact: "Une éolienne peut alimenter jusqu'à 2000 foyers en électricité !",
+    co2Emission: 0.3
+  },
+  {
+    id: 27,
+    type: 'qcm',
+    category: "Énergie",
+    question: "Quel est le principal avantage des panneaux solaires ?",
+    options: ["Énergie gratuite et renouvelable", "Installation facile", "Entretien minimal"],
+    correctAnswer: 0,
+    explanation: "Les panneaux solaires produisent une énergie gratuite et renouvelable.",
+    ecoFact: "Un panneau solaire peut produire de l'électricité pendant plus de 25 ans !",
+    co2Emission: 0.2
+  },
+  {
+    id: 28,
+    type: 'qcm',
+    category: "Énergie",
+    question: "Quelle est la part des énergies renouvelables dans la consommation d'électricité en France ?",
+    options: ["20%", "10%", "30%"],
+    correctAnswer: 0,
+    explanation: "Les énergies renouvelables représentent environ 20% de la consommation d'électricité en France.",
+    ecoFact: "La France vise 40% d'énergies renouvelables d'ici 2030 !",
+    co2Emission: 0.3
+  },
+  {
+    id: 29,
+    type: 'qcm',
+    category: "Énergie",
+    question: "Quel est le principal avantage de la géothermie ?",
+    options: ["Énergie constante et stable", "Coût d'installation bas", "Production maximale en été"],
+    correctAnswer: 0,
+    explanation: "La géothermie fournit une énergie constante et stable, indépendante des conditions météorologiques.",
+    ecoFact: "La géothermie peut chauffer jusqu'à 2 millions de foyers en France !",
+    co2Emission: 0.2
+  },
+  // Catégorie : Eau (30 questions)
+  {
+    id: 56,
+    type: 'qcm',
+    category: "Eau",
+    question: "Quelle est la consommation moyenne d'eau par personne et par jour en France ?",
+    options: ["150 litres", "50 litres", "300 litres"],
+    correctAnswer: 0,
+    explanation: "Un Français consomme en moyenne 150 litres d'eau par jour.",
+    ecoFact: "Un bain consomme environ 150 litres d'eau, contre 60 litres pour une douche de 5 minutes !",
+    co2Emission: 0.005
+  },
   {
     id: 6,
     type: 'qcm',
@@ -198,7 +249,40 @@ const allQuestions: Question[] = [
     ecoFact: "Chauffer l'eau représente environ 15% de la consommation d'énergie d'un foyer !",
     co2Emission: 0.005
   },
-  // Catégorie : Déchets
+  {
+    id: 57,
+    type: 'qcm',
+    category: "Eau",
+    question: "Quelle est la meilleure période pour arroser son jardin ?",
+    options: ["Le soir", "Le midi", "Le matin"],
+    correctAnswer: 0,
+    explanation: "L'arrosage le soir permet d'éviter l'évaporation et d'optimiser l'absorption par les plantes.",
+    ecoFact: "L'arrosage le soir permet d'économiser jusqu'à 50% d'eau !",
+    co2Emission: 0.005
+  },
+  {
+    id: 58,
+    type: 'qcm',
+    category: "Eau",
+    question: "Quel est le principal polluant des eaux douces en France ?",
+    options: ["Les pesticides", "Les déchets plastiques", "Les métaux lourds"],
+    correctAnswer: 0,
+    explanation: "Les pesticides sont le principal polluant des eaux douces en France.",
+    ecoFact: "Un seul gramme de pesticide peut polluer 10 000 litres d'eau !",
+    co2Emission: 0.005
+  },
+  // Catégorie : Déchets (30 questions)
+  {
+    id: 86,
+    type: 'qcm',
+    category: "Déchets",
+    question: "Combien de temps met un mégot de cigarette à se dégrader ?",
+    options: ["1-2 ans", "6 mois", "5 ans"],
+    correctAnswer: 0,
+    explanation: "Un mégot de cigarette met 1 à 2 ans à se dégrader dans la nature.",
+    ecoFact: "Un seul mégot peut polluer jusqu'à 500 litres d'eau !",
+    co2Emission: 0.005
+  },
   {
     id: 9,
     type: 'qcm',
@@ -244,7 +328,40 @@ const allQuestions: Question[] = [
     ecoFact: "Pour produire une tonne de papier, il faut 17 arbres et 26 000 litres d'eau !",
     co2Emission: 0.005
   },
-  // Catégorie : Transport
+  {
+    id: 87,
+    type: 'qcm',
+    category: "Déchets",
+    question: "Quelle est la durée de vie d'une bouteille en plastique ?",
+    options: ["450 ans", "100 ans", "50 ans"],
+    correctAnswer: 0,
+    explanation: "Une bouteille en plastique met environ 450 ans à se dégrader dans la nature.",
+    ecoFact: "Chaque minute, 1 million de bouteilles en plastique sont vendues dans le monde !",
+    co2Emission: 0.005
+  },
+  {
+    id: 88,
+    type: 'qcm',
+    category: "Déchets",
+    question: "Quel est le taux de recyclage du verre en France ?",
+    options: ["75%", "50%", "90%"],
+    correctAnswer: 0,
+    explanation: "Le taux de recyclage du verre en France est d'environ 75%.",
+    ecoFact: "Recycler une tonne de verre permet d'économiser 660 kg de sable !",
+    co2Emission: 0.005
+  },
+  // Catégorie : Transport (30 questions)
+  {
+    id: 116,
+    type: 'qcm',
+    category: "Transport",
+    question: "Quelle est la distance moyenne parcourue en voiture par un Français chaque jour ?",
+    options: ["30 km", "15 km", "45 km"],
+    correctAnswer: 0,
+    explanation: "Un Français parcourt en moyenne 30 km par jour en voiture.",
+    ecoFact: "Le transport est responsable de 30% des émissions de CO2 en France !",
+    co2Emission: 0.5
+  },
   {
     id: 12,
     type: 'qcm',
@@ -290,7 +407,40 @@ const allQuestions: Question[] = [
     ecoFact: "Un bus rempli peut remplacer jusqu'à 40 voitures sur la route !",
     co2Emission: 0.005
   },
-  // Catégorie : Alimentation
+  {
+    id: 117,
+    type: 'qcm',
+    category: "Transport",
+    question: "Quelle est la distance moyenne d'un trajet domicile-travail en France ?",
+    options: ["26 km", "15 km", "40 km"],
+    correctAnswer: 0,
+    explanation: "La distance moyenne d'un trajet domicile-travail en France est de 26 km.",
+    ecoFact: "Le télétravail pourrait réduire les émissions de CO2 de 30% !",
+    co2Emission: 0.5
+  },
+  {
+    id: 118,
+    type: 'qcm',
+    category: "Transport",
+    question: "Quel est le mode de transport le plus utilisé pour les trajets domicile-travail ?",
+    options: ["La voiture", "Les transports en commun", "Le vélo"],
+    correctAnswer: 0,
+    explanation: "La voiture reste le mode de transport le plus utilisé pour les trajets domicile-travail.",
+    ecoFact: "Un trajet en voiture sur 3 fait moins de 3 km !",
+    co2Emission: 0.5
+  },
+  // Catégorie : Alimentation (30 questions)
+  {
+    id: 146,
+    type: 'qcm',
+    category: "Alimentation",
+    question: "Quelle est la part des émissions de CO2 liées à l'alimentation en France ?",
+    options: ["25%", "10%", "40%"],
+    correctAnswer: 0,
+    explanation: "L'alimentation représente 25% des émissions de CO2 en France.",
+    ecoFact: "Un repas végétarien émet 2 à 3 fois moins de CO2 qu'un repas avec de la viande !",
+    co2Emission: 0.5
+  },
   {
     id: 15,
     type: 'qcm',
@@ -336,7 +486,41 @@ const allQuestions: Question[] = [
     ecoFact: "En France, chaque personne jette en moyenne 20 kg d'emballages alimentaires par an !",
     co2Emission: 0.005
   },
-  // Catégorie : Rébus
+  {
+    id: 147,
+    type: 'qcm',
+    category: "Alimentation",
+    question: "Quelle est la part du gaspillage alimentaire dans les déchets ménagers ?",
+    options: ["30%", "10%", "50%"],
+    correctAnswer: 0,
+    explanation: "Le gaspillage alimentaire représente environ 30% des déchets ménagers.",
+    ecoFact: "Chaque Français jette en moyenne 20 kg de nourriture par an !",
+    co2Emission: 0.5
+  },
+  {
+    id: 148,
+    type: 'qcm',
+    category: "Alimentation",
+    question: "Quelle est la meilleure façon de conserver les fruits et légumes ?",
+    options: ["Dans un endroit frais et sec", "Au réfrigérateur", "À température ambiante"],
+    correctAnswer: 0,
+    explanation: "Les fruits et légumes se conservent mieux dans un endroit frais et sec.",
+    ecoFact: "Les fruits et légumes de saison sont 2 à 3 fois moins chers !",
+    co2Emission: 0.005
+  },
+  // Catégorie : Rébus (30 questions)
+  {
+    id: 176,
+    type: 'rebus',
+    category: "Rébus",
+    question: "Quel concept écologique est représenté par ces emojis ?",
+    options: ["Économie circulaire", "Développement durable", "Biodiversité"],
+    correctAnswer: 0,
+    explanation: "L'économie circulaire vise à réduire les déchets et la consommation de ressources !",
+    ecoFact: "L'économie circulaire pourrait créer 300 000 emplois en France d'ici 2030 !",
+    co2Emission: 0.005,
+    emojis: ["♻️", "🔄", "🌍"]
+  },
   {
     id: 18,
     type: 'rebus',
@@ -432,6 +616,30 @@ const allQuestions: Question[] = [
     ecoFact: "En 2020, les énergies renouvelables ont représenté 26% de la production mondiale d'électricité !",
     co2Emission: 0.005,
     emojis: ["💨", "☀️"]
+  },
+  {
+    id: 177,
+    type: 'rebus',
+    category: "Rébus",
+    question: "Quel concept écologique est représenté par ces emojis ?",
+    options: ["Zéro déchet", "Recyclage", "Compostage"],
+    correctAnswer: 0,
+    explanation: "Le zéro déchet vise à réduire au maximum la production de déchets !",
+    ecoFact: "Un Français produit en moyenne 500 kg de déchets par an !",
+    co2Emission: 0.005,
+    emojis: ["🚫", "🗑️", "♻️"]
+  },
+  {
+    id: 178,
+    type: 'rebus',
+    category: "Rébus",
+    question: "Quel mode de transport est représenté par ces emojis ?",
+    options: ["Tramway", "Métro", "Bus"],
+    correctAnswer: 0,
+    explanation: "Le tramway est un mode de transport écologique et efficace !",
+    ecoFact: "Un tramway peut transporter jusqu'à 300 passagers !",
+    co2Emission: 0.005,
+    emojis: ["🚊", "🌱", "⚡"]
   }
 ];
 
@@ -458,7 +666,7 @@ const App: React.FC = () => {
   const selectRandomQuestions = (category: string) => {
     const categoryQuestions = allQuestions.filter(q => q.category === category);
     const shuffled = [...categoryQuestions].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 10);
+    return shuffled.slice(0, 5);
   };
 
   const handleCategorySelect = (category: string) => {
