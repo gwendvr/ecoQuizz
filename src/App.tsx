@@ -953,7 +953,9 @@ const App: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => handleAnswerSelect(index)}
-                  className={selectedAnswer === index ? "selected" : ""}
+                  className={`${selectedAnswer === index ? "selected" : ""} ${
+                    selectedAnswer === index && index !== questions[currentQuestion].correctAnswer ? "incorrect" : ""
+                  }`}
                   disabled={selectedAnswer !== null}
                 >
                   {option}
