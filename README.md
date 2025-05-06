@@ -16,10 +16,12 @@ Nous avons développé une WebApp éducative et interactive destinée aux 15-25 
 
 ### Choix des outils
 - **ChatGPT (OpenAI)** pour :
-  - Générer le code front-end React/TypeScript
   - Créer des textes engageants
   - Développer des idées de quiz
   - Organiser la structure narrative
+
+- **Cursor** pour :
+  - Générer le code front-end React/TypeScript
 
 ### Justification
 Ces outils sont faciles d'accès, rapides à utiliser et donnent des résultats personnalisables, parfaits pour un projet court avec des objectifs créatifs. Leur ergonomie permet une itération rapide.
