@@ -11,6 +11,8 @@ interface Question {
   category: string;
   ecoFact?: string;
   co2Emission: number;
+  type: 'qcm' | 'rebus';
+  emojis?: string[]; // Pour les rébus avec emojis
 }
 
 interface Badge {
@@ -64,10 +66,20 @@ const avatars: Avatar[] = [
   { id: "cloud", emoji: "☁️", name: "Nuage Souriant" }
 ];
 
+const categories = [
+  { name: 'Énergie', color: '#FFA726' },
+  { name: 'Eau', color: '#29B6F6' },
+  { name: 'Déchets', color: '#66BB6A' },
+  { name: 'Transport', color: '#EC407A' },
+  { name: 'Alimentation', color: '#7E57C2' },
+  { name: 'Rébus', color: '#9C27B0' }
+];
+
 const allQuestions: Question[] = [
   // Catégorie : Énergie
   {
     id: 1,
+    type: 'qcm',
     category: "Énergie",
     question: "Quelle est la principale source d'énergie renouvelable en France ?",
     options: [
@@ -82,6 +94,7 @@ const allQuestions: Question[] = [
   },
   {
     id: 2,
+    type: 'qcm',
     category: "Énergie",
     question: "Quel est le principal avantage des ampoules LED ?",
     options: [
@@ -96,6 +109,7 @@ const allQuestions: Question[] = [
   },
   {
     id: 3,
+    type: 'qcm',
     category: "Énergie",
     question: "Quelle est la meilleure façon de réduire sa consommation d'électricité ?",
     options: [
@@ -110,6 +124,7 @@ const allQuestions: Question[] = [
   },
   {
     id: 4,
+    type: 'qcm',
     category: "Énergie",
     question: "Quel est le principal avantage des énergies renouvelables ?",
     options: [
@@ -124,6 +139,7 @@ const allQuestions: Question[] = [
   },
   {
     id: 5,
+    type: 'qcm',
     category: "Énergie",
     question: "Quel est le principal avantage des énergies solaires ?",
     options: [
@@ -139,6 +155,7 @@ const allQuestions: Question[] = [
   // Catégorie : Eau
   {
     id: 6,
+    type: 'qcm',
     category: "Eau",
     question: "Quel pourcentage de l'eau sur Terre est de l'eau douce ?",
     options: [
@@ -153,6 +170,7 @@ const allQuestions: Question[] = [
   },
   {
     id: 7,
+    type: 'qcm',
     category: "Eau",
     question: "Quelle est la meilleure façon de réduire sa consommation d'eau ?",
     options: [
@@ -167,6 +185,7 @@ const allQuestions: Question[] = [
   },
   {
     id: 8,
+    type: 'qcm',
     category: "Eau",
     question: "Quelle est la meilleure façon de réduire sa consommation d'eau chaude ?",
     options: [
@@ -182,6 +201,7 @@ const allQuestions: Question[] = [
   // Catégorie : Déchets
   {
     id: 9,
+    type: 'qcm',
     category: "Déchets",
     question: "Quelle est la durée de vie moyenne d'un sac en plastique ?",
     options: [
@@ -196,6 +216,7 @@ const allQuestions: Question[] = [
   },
   {
     id: 10,
+    type: 'qcm',
     category: "Déchets",
     question: "Quelle est la meilleure façon de réduire ses déchets ?",
     options: [
@@ -210,6 +231,7 @@ const allQuestions: Question[] = [
   },
   {
     id: 11,
+    type: 'qcm',
     category: "Déchets",
     question: "Quelle est la meilleure façon de réduire sa consommation de papier ?",
     options: [
@@ -225,6 +247,7 @@ const allQuestions: Question[] = [
   // Catégorie : Transport
   {
     id: 12,
+    type: 'qcm',
     category: "Transport",
     question: "Quel est le mode de transport le plus écologique pour les trajets courts ?",
     options: [
@@ -239,6 +262,7 @@ const allQuestions: Question[] = [
   },
   {
     id: 13,
+    type: 'qcm',
     category: "Transport",
     question: "Quel est le principal avantage du covoiturage ?",
     options: [
@@ -253,6 +277,7 @@ const allQuestions: Question[] = [
   },
   {
     id: 14,
+    type: 'qcm',
     category: "Transport",
     question: "Quel est le principal avantage des transports en commun ?",
     options: [
@@ -268,6 +293,7 @@ const allQuestions: Question[] = [
   // Catégorie : Alimentation
   {
     id: 15,
+    type: 'qcm',
     category: "Alimentation",
     question: "Quelle est la meilleure façon de réduire son empreinte carbone alimentaire ?",
     options: [
@@ -282,6 +308,7 @@ const allQuestions: Question[] = [
   },
   {
     id: 16,
+    type: 'qcm',
     category: "Alimentation",
     question: "Quelle est la meilleure façon de réduire sa consommation de viande ?",
     options: [
@@ -296,6 +323,7 @@ const allQuestions: Question[] = [
   },
   {
     id: 17,
+    type: 'qcm',
     category: "Alimentation",
     question: "Quelle est la meilleure façon de conserver les aliments ?",
     options: [
@@ -307,15 +335,104 @@ const allQuestions: Question[] = [
     explanation: "Les contenants réutilisables sont plus écologiques que les emballages jetables.",
     ecoFact: "En France, chaque personne jette en moyenne 20 kg d'emballages alimentaires par an !",
     co2Emission: 0.005
+  },
+  // Catégorie : Rébus
+  {
+    id: 18,
+    type: 'rebus',
+    category: "Rébus",
+    question: "Quelle source d'énergie est représentée par ces emojis ?",
+    options: ["Énergie solaire", "Énergie éolienne", "Énergie hydraulique"],
+    correctAnswer: 0,
+    explanation: "Le soleil est une source d'énergie renouvelable et inépuisable !",
+    ecoFact: "En une heure, le soleil fournit à la Terre plus d'énergie que l'humanité n'en consomme en une année !",
+    co2Emission: 0.1,
+    emojis: ["☀️", "⚡"]
+  },
+  {
+    id: 19,
+    type: 'rebus',
+    category: "Rébus",
+    question: "Quel geste écologique est représenté par ces emojis ?",
+    options: ["Économiser l'eau", "Nettoyer l'eau", "Stocker l'eau"],
+    correctAnswer: 0,
+    explanation: "Économiser l'eau est essentiel pour préserver cette ressource précieuse !",
+    ecoFact: "Un robinet qui goutte peut gaspiller jusqu'à 120 litres d'eau par jour !",
+    co2Emission: 0.005,
+    emojis: ["💧", "🚰"]
+  },
+  {
+    id: 20,
+    type: 'rebus',
+    category: "Rébus",
+    question: "Quel concept écologique est représenté par ces emojis ?",
+    options: ["Recyclage", "Compostage", "Incinération"],
+    correctAnswer: 0,
+    explanation: "Le recyclage permet de donner une seconde vie aux matériaux !",
+    ecoFact: "Recycler une tonne de papier permet d'économiser 17 arbres !",
+    co2Emission: 0.005,
+    emojis: ["♻️", "🔄"]
+  },
+  {
+    id: 21,
+    type: 'rebus',
+    category: "Rébus",
+    question: "Quel mode de transport est représenté par ces emojis ?",
+    options: ["Vélo électrique", "Voiture électrique", "Scooter électrique"],
+    correctAnswer: 0,
+    explanation: "Le vélo électrique est un excellent compromis entre effort et écologie !",
+    ecoFact: "Un vélo électrique émet 10 fois moins de CO2 qu'une voiture !",
+    co2Emission: 0.005,
+    emojis: ["🚲", "⚡"]
+  },
+  {
+    id: 22,
+    type: 'rebus',
+    category: "Rébus",
+    question: "Quel concept alimentaire est représenté par ces emojis ?",
+    options: ["Agriculture biologique", "Agriculture intensive", "Agriculture locale"],
+    correctAnswer: 0,
+    explanation: "L'agriculture biologique respecte l'environnement et la biodiversité !",
+    ecoFact: "Les produits bio contiennent en moyenne 30% d'antioxydants en plus !",
+    co2Emission: 0.005,
+    emojis: ["🌱", "🚜"]
+  },
+  {
+    id: 23,
+    type: 'rebus',
+    category: "Rébus",
+    question: "Quel geste écologique est représenté par ces emojis ?",
+    options: ["Composter", "Recycler", "Réutiliser"],
+    correctAnswer: 0,
+    explanation: "Le compostage permet de transformer les déchets organiques en engrais naturel !",
+    ecoFact: "30% de nos déchets ménagers peuvent être compostés !",
+    co2Emission: 0.005,
+    emojis: ["🍎", "🌍"]
+  },
+  {
+    id: 24,
+    type: 'rebus',
+    category: "Rébus",
+    question: "Quel mode de transport est représenté par ces emojis ?",
+    options: ["Covoiturage", "Autopartage", "Location"],
+    correctAnswer: 0,
+    explanation: "Le covoiturage permet de réduire les émissions de CO2 et les embouteillages !",
+    ecoFact: "Un trajet en covoiturage avec 3 personnes divise par 3 les émissions de CO2 par passager !",
+    co2Emission: 0.005,
+    emojis: ["🚗", "👥"]
+  },
+  {
+    id: 25,
+    type: 'rebus',
+    category: "Rébus",
+    question: "Quel concept écologique est représenté par ces emojis ?",
+    options: ["Énergie renouvelable", "Énergie fossile", "Énergie nucléaire"],
+    correctAnswer: 0,
+    explanation: "Les énergies renouvelables sont inépuisables et respectueuses de l'environnement !",
+    ecoFact: "En 2020, les énergies renouvelables ont représenté 26% de la production mondiale d'électricité !",
+    co2Emission: 0.005,
+    emojis: ["💨", "☀️"]
   }
-];
-
-const categories = [
-  { name: 'Énergie', color: '#FFA726' },
-  { name: 'Eau', color: '#29B6F6' },
-  { name: 'Déchets', color: '#66BB6A' },
-  { name: 'Transport', color: '#EC407A' },
-  { name: 'Alimentation', color: '#7E57C2' },
 ];
 
 const App: React.FC = () => {
@@ -609,9 +726,22 @@ const App: React.FC = () => {
             Question {currentQuestion + 1}/{questions.length}
           </div>
           <div className="question">
-            <h2>{questions[currentQuestion].question}</h2>
+            {questions[currentQuestion]?.type === 'rebus' ? (
+              <div className="rebus-container">
+                <div className="rebus-emojis">
+                  {questions[currentQuestion].emojis?.map((emoji, index) => (
+                    <span key={index} className="rebus-emoji">
+                      {emoji}
+                    </span>
+                  ))}
+                </div>
+                <h2>{questions[currentQuestion].question}</h2>
+              </div>
+            ) : (
+              <h2>{questions[currentQuestion]?.question}</h2>
+            )}
             <div className="options">
-              {questions[currentQuestion].options.map((option, index) => (
+              {questions[currentQuestion]?.options.map((option, index) => (
                 <button
                   key={index}
                   onClick={() => handleAnswerSelect(index)}
