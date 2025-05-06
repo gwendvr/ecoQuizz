@@ -1,6 +1,6 @@
 # 🌱 Eco Quiz - Quiz Écologique Interactif
 
-## 🧾 VOTRE PRODUCTION
+## 🧾 NOTRE PRODUCTION
 
 ### Description du produit final
 Nous avons développé une WebApp éducative et interactive destinée aux 15-25 ans, centrée sur la sensibilisation à l'écologie. Elle propose différents types de quiz : QCM classique et rébus écologiques avec emojis. L'interface évolue visuellement (de rouge à vert) en fonction du score, symbolisant l'impact écologique de l'utilisateur. À la fin, un badge, un score carbone et des messages personnalisés sont proposés pour encourager l'engagement.
