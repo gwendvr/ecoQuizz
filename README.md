@@ -111,11 +111,6 @@ npm install
 ```bash
 npm start
 ```
-
-## 📄 Licence
-
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
-
 ---
 
 Fait avec ❤️ pour la planète 🌍 
