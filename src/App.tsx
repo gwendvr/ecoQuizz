@@ -10,6 +10,7 @@ interface Question {
   explanation: string;
   category: string;
   ecoFact?: string;
+  co2Emission: number;
 }
 
 interface Badge {
@@ -76,7 +77,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "L'énergie hydraulique est la principale source d'énergie renouvelable en France, grâce à ses nombreux barrages.",
-    ecoFact: "Un téléphone contient jusqu'à 30 métaux rares."
+    ecoFact: "Un téléphone contient jusqu'à 30 métaux rares.",
+    co2Emission: 0.5
   },
   {
     id: 2,
@@ -89,7 +91,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Les ampoules LED consomment jusqu'à 90% moins d'énergie que les ampoules traditionnelles.",
-    ecoFact: "Une ampoule LED peut durer jusqu'à 25 fois plus longtemps qu'une ampoule classique !"
+    ecoFact: "Une ampoule LED peut durer jusqu'à 25 fois plus longtemps qu'une ampoule classique !",
+    co2Emission: 0.2
   },
   {
     id: 3,
@@ -102,7 +105,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Les appareils en veille consomment jusqu'à 10% de l'électricité d'un foyer.",
-    ecoFact: "Un ordinateur en veille consomme autant d'électricité qu'une ampoule allumée !"
+    ecoFact: "Un ordinateur en veille consomme autant d'électricité qu'une ampoule allumée !",
+    co2Emission: 0.05
   },
   {
     id: 4,
@@ -115,7 +119,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Les énergies renouvelables sont inépuisables et ne produisent pas de gaz à effet de serre.",
-    ecoFact: "En 2020, les énergies renouvelables ont représenté 26% de la production mondiale d'électricité !"
+    ecoFact: "En 2020, les énergies renouvelables ont représenté 26% de la production mondiale d'électricité !",
+    co2Emission: 0.3
   },
   {
     id: 5,
@@ -128,7 +133,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "L'énergie solaire est une source d'énergie inépuisable et ne produit pas de gaz à effet de serre.",
-    ecoFact: "En une heure, le soleil fournit à la Terre plus d'énergie que l'humanité n'en consomme en une année !"
+    ecoFact: "En une heure, le soleil fournit à la Terre plus d'énergie que l'humanité n'en consomme en une année !",
+    co2Emission: 0.1
   },
   // Catégorie : Eau
   {
@@ -142,7 +148,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Seulement 2,5% de l'eau sur Terre est de l'eau douce, dont une grande partie est inaccessible (glaciers, neige).",
-    ecoFact: "Un robinet qui goutte peut gaspiller jusqu'à 120 litres d'eau par jour !"
+    ecoFact: "Un robinet qui goutte peut gaspiller jusqu'à 120 litres d'eau par jour !",
+    co2Emission: 0.005
   },
   {
     id: 7,
@@ -155,7 +162,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Prendre des douches courtes permet d'économiser jusqu'à 100 litres d'eau par rapport à un bain.",
-    ecoFact: "Un bain consomme environ 150 litres d'eau, contre 60 litres pour une douche de 5 minutes !"
+    ecoFact: "Un bain consomme environ 150 litres d'eau, contre 60 litres pour une douche de 5 minutes !",
+    co2Emission: 0.005
   },
   {
     id: 8,
@@ -168,7 +176,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Un mitigeur permet de réguler la température de l'eau et d'économiser jusqu'à 30% d'eau chaude.",
-    ecoFact: "Chauffer l'eau représente environ 15% de la consommation d'énergie d'un foyer !"
+    ecoFact: "Chauffer l'eau représente environ 15% de la consommation d'énergie d'un foyer !",
+    co2Emission: 0.005
   },
   // Catégorie : Déchets
   {
@@ -182,7 +191,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Un sac en plastique met environ 450 ans à se dégrader dans la nature.",
-    ecoFact: "Chaque année, environ 8 millions de tonnes de plastique finissent dans les océans !"
+    ecoFact: "Chaque année, environ 8 millions de tonnes de plastique finissent dans les océans !",
+    co2Emission: 0.005
   },
   {
     id: 10,
@@ -195,7 +205,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Le compostage permet de recycler les déchets organiques en engrais naturel.",
-    ecoFact: "Les déchets organiques représentent environ 30% de nos poubelles !"
+    ecoFact: "Les déchets organiques représentent environ 30% de nos poubelles !",
+    co2Emission: 0.005
   },
   {
     id: 11,
@@ -208,7 +219,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "L'impression recto-verso permet de réduire de moitié la consommation de papier.",
-    ecoFact: "Pour produire une tonne de papier, il faut 17 arbres et 26 000 litres d'eau !"
+    ecoFact: "Pour produire une tonne de papier, il faut 17 arbres et 26 000 litres d'eau !",
+    co2Emission: 0.005
   },
   // Catégorie : Transport
   {
@@ -222,7 +234,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Le vélo est le mode de transport le plus écologique car il ne produit aucune émission et est bon pour la santé.",
-    ecoFact: "Un trajet de 5 km en voiture émet environ 1 kg de CO2, contre 0 kg en vélo !"
+    ecoFact: "Un trajet de 5 km en voiture émet environ 1 kg de CO2, contre 0 kg en vélo !",
+    co2Emission: 0.005
   },
   {
     id: 13,
@@ -235,7 +248,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Le covoiturage permet de réduire significativement les émissions de CO2 par personne.",
-    ecoFact: "Un trajet en covoiturage avec 3 personnes divise par 3 les émissions de CO2 par passager !"
+    ecoFact: "Un trajet en covoiturage avec 3 personnes divise par 3 les émissions de CO2 par passager !",
+    co2Emission: 0.005
   },
   {
     id: 14,
@@ -248,7 +262,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Les transports en commun permettent de réduire significativement les émissions de CO2 par personne.",
-    ecoFact: "Un bus rempli peut remplacer jusqu'à 40 voitures sur la route !"
+    ecoFact: "Un bus rempli peut remplacer jusqu'à 40 voitures sur la route !",
+    co2Emission: 0.005
   },
   // Catégorie : Alimentation
   {
@@ -262,7 +277,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Manger local et de saison réduit les émissions liées au transport et à la conservation des aliments.",
-    ecoFact: "Un fruit importé par avion émet 10 à 20 fois plus de CO2 qu'un fruit local !"
+    ecoFact: "Un fruit importé par avion émet 10 à 20 fois plus de CO2 qu'un fruit local !",
+    co2Emission: 0.005
   },
   {
     id: 16,
@@ -275,7 +291,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Le flexitarisme permet de réduire son impact environnemental tout en gardant une alimentation équilibrée.",
-    ecoFact: "La production d'un kilo de bœuf émet autant de CO2 qu'un trajet de 60 km en voiture !"
+    ecoFact: "La production d'un kilo de bœuf émet autant de CO2 qu'un trajet de 60 km en voiture !",
+    co2Emission: 0.005
   },
   {
     id: 17,
@@ -288,7 +305,8 @@ const allQuestions: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Les contenants réutilisables sont plus écologiques que les emballages jetables.",
-    ecoFact: "En France, chaque personne jette en moyenne 20 kg d'emballages alimentaires par an !"
+    ecoFact: "En France, chaque personne jette en moyenne 20 kg d'emballages alimentaires par an !",
+    co2Emission: 0.005
   }
 ];
 
@@ -316,6 +334,9 @@ const App: React.FC = () => {
   const [showExplanation, setShowExplanation] = useState(false);
   const [currentExplanation, setCurrentExplanation] = useState("");
   const shareImageRef = useRef<HTMLDivElement>(null);
+  const [totalCo2Emission, setTotalCo2Emission] = useState(0);
+  const [backgroundColor, setBackgroundColor] = useState('#FFE0E0');
+  const [completedCategories, setCompletedCategories] = useState<string[]>([]);
 
   const selectRandomQuestions = (category: string) => {
     const categoryQuestions = allQuestions.filter(q => q.category === category);
@@ -341,6 +362,15 @@ const App: React.FC = () => {
     return badges.find(badge => score >= badge.minScore && score <= badge.maxScore) || badges[0];
   };
 
+  const getBackgroundColor = (unlockedFactsCount: number, totalCategories: number) => {
+    const percentage = (unlockedFactsCount / totalCategories) * 100;
+    if (percentage <= 20) return '#FFE0E0'; // Rouge clair
+    if (percentage <= 40) return '#FFD6A5'; // Orange clair
+    if (percentage <= 60) return '#FDFFB6'; // Jaune clair
+    if (percentage <= 80) return '#CAFFBF'; // Vert clair
+    return '#9BF6FF'; // Vert vif
+  };
+
   const handleAnswerSelect = (answerIndex: number) => {
     setSelectedAnswer(answerIndex);
     setShowExplanation(true);
@@ -348,7 +378,13 @@ const App: React.FC = () => {
     
     if (answerIndex === questions[currentQuestion].correctAnswer) {
       setScore(score + 1);
+      setTotalCo2Emission(prev => prev + questions[currentQuestion].co2Emission);
     }
+  };
+
+  const isCategoryAccessible = (categoryName: string) => {
+    // Toutes les catégories sont accessibles sauf si elles sont déjà complétées
+    return !completedCategories.includes(categoryName);
   };
 
   const handleNextQuestion = () => {
@@ -366,7 +402,12 @@ const App: React.FC = () => {
           fact: `Félicitations ! Tu as maîtrisé la catégorie ${selectedCategory} ! Voici un fait écolo : ${randomQuestion.ecoFact}`,
           date: new Date()
         };
-        setUnlockedFacts(prev => [...prev, newFact]);
+        setUnlockedFacts(prev => {
+          const newFacts = [...prev, newFact];
+          setBackgroundColor(getBackgroundColor(newFacts.length, categories.length));
+          return newFacts;
+        });
+        setCompletedCategories(prev => [...prev, selectedCategory]);
       }
       setQuizCompleted(true);
     }
@@ -475,6 +516,13 @@ const App: React.FC = () => {
     );
   };
 
+  const getCo2Interpretation = (co2: number) => {
+    if (co2 <= 5) return "Excellent ! Ton empreinte carbone est très faible.";
+    if (co2 <= 10) return "Bien ! Tu as une bonne empreinte carbone.";
+    if (co2 <= 15) return "Moyen. Il y a encore des progrès à faire.";
+    return "À améliorer. Ton empreinte carbone est élevée.";
+  };
+
   if (showAvatarSelection) {
     return (
       <div className="avatar-selection">
@@ -496,7 +544,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="app-container">
+    <div className="app-container" style={{ backgroundColor }}>
       <Navbar />
       <UnlockedFactsPanel />
       
@@ -505,15 +553,30 @@ const App: React.FC = () => {
           <h1>Bienvenue jeune éco-héros ! 🌿</h1>
           <p>Le monde a besoin de toi. Réponds aux questions pour prouver ta valeur dans cette mission pour la planète.</p>
           <div className="categories">
-            {categories.map(category => (
-              <button
-                key={category.name}
-                onClick={() => handleCategorySelect(category.name)}
-                style={{ backgroundColor: category.color }}
-              >
-                {category.name}
-              </button>
-            ))}
+            {categories.map(category => {
+              const isCompleted = completedCategories.includes(category.name);
+              return (
+                <button
+                  key={category.name}
+                  onClick={() => !isCompleted && handleCategorySelect(category.name)}
+                  style={{ 
+                    backgroundColor: category.color,
+                    opacity: isCompleted ? 0.5 : 1,
+                    cursor: isCompleted ? 'not-allowed' : 'pointer'
+                  }}
+                  className={`category-button ${isCompleted ? 'completed locked' : ''}`}
+                  disabled={isCompleted}
+                >
+                  {category.name}
+                  {isCompleted && (
+                    <>
+                      <span className="lock-icon">🔒</span>
+                      <span className="check-icon">✓</span>
+                    </>
+                  )}
+                </button>
+              );
+            })}
           </div>
         </div>
       ) : quizCompleted ? (
@@ -525,13 +588,18 @@ const App: React.FC = () => {
             <p>{getCurrentBadge().message}</p>
           </div>
           <p>Score final : {score}/{questions.length}</p>
+          <div className="co2-result">
+            <h3>Empreinte carbone</h3>
+            <p>Tu as généré {totalCo2Emission.toFixed(1)} kg de CO₂</p>
+            <p className="co2-interpretation">{getCo2Interpretation(totalCo2Emission)}</p>
+          </div>
           <div className="share-options">
             <button onClick={generateShareImage} className="share-button">
               Télécharger mon score en image
             </button>
           </div>
           <button onClick={handleRestart} className="restart-button">
-            Recommencer
+            Retour aux catégories
           </button>
           <ShareImage />
         </div>

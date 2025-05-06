@@ -233,6 +233,7 @@ body {
 .app-container {
   min-height: 100vh;
   padding-top: 60px; /* Espace pour la navbar */
+  transition: background-color 0.5s ease;
 }
 
 /* Navbar */
@@ -551,18 +552,59 @@ body {
   margin-top: 2rem;
 }
 
-.categories button {
+.category-button {
   padding: 1rem;
   border: none;
   border-radius: 10px;
   color: white;
   font-size: 1rem;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.categories button:hover {
+.category-button:hover:not(:disabled) {
   transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.category-button:disabled {
+  cursor: not-allowed;
+}
+
+.category-button.locked {
+  position: relative;
+}
+
+.category-button.locked::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.lock-icon {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.check-icon {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  color: white;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.category-button.completed {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 /* Image à partager */
@@ -649,4 +691,30 @@ body {
 .share-button:hover {
   transform: scale(1.05);
   opacity: 0.9;
+}
+
+/* Résultat CO2 */
+.co2-result {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.co2-result h3 {
+  color: #2E7D32;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.co2-result p {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.co2-interpretation {
+  color: #666;
+  font-style: italic;
+  margin-top: 1rem !important;
 } 
